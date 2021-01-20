@@ -1,0 +1,12 @@
+@charset "UTF-8";
+ div#wrap { background:#ddd; }
+        header#header { background:#fdd; }
+        nav#nav { background:#dfd; }
+        section#container { background:#ddf; }
+       
+            aside#aside { background:#fef; }
+        footer#footer { background:#ffe; }
+       
+        div#warp, header#header, nav#nav,
+        section#container, div.content, aside#aside,
+        footer#footer { padding:10px; }
