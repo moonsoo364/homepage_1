@@ -1,15 +1,16 @@
+@charset "UTF-8";
 body{
     margin:0;
     font-family: 'Nanum Gothic';
     min-height: 100%;
 }
 a{
-    text-decoration: none;
-    color:azure;
+	color:azure;
+	text-decoration: none;
 }
 
 .navbar{
-	width:100%;
+
 display:  flex;
 justify-content : space-between;
 align-items:center;
@@ -55,24 +56,9 @@ padding: 10px 20px;
     font-size: 32px;
     color:#ffff80;
 }
-.div_Explan{
-	text-align: center;
-	margin-bottom:50px;
-}
-.p_title {
-	font-size: 20px;
-	font-weight:bold;
-	font-family:"Black Han Sans&display" !important;
-	margin: 50px;
-	margin-bottom:30px;
+/*헤더 영역*/
 
-}
-
-.p_main {
-	font-size: 20px;
-	font-family:"Black Han Sans&display" !important;
-}
-
+/* 푸터 영역*/
 .footer_style {
   position:fixed;
   left: 0;
@@ -87,11 +73,6 @@ padding: 10px 20px;
 	margin-bottom: 3px;
 
 }
-.footer_ment2{
-	margin:0px;
-
-}
-
 .footer_alarm{
 	position:absolute;
 	margin: 0; padding: 0;
@@ -103,13 +84,46 @@ padding: 10px 20px;
 
   float: left;
   color:#ffff80;
-  font-size: 40px;
-  left: 200px;
+  font-size: 35px;
+  bottom: 17px;
 }
 .div_right{
-	padding-left:80px;
+	padding-left:60px;
+}
+/*푸터 영역*/
+
+/*컨텐츠 영역 */
+.wrap_contents{
+	margin:0 auto;
+	margin-top: 60px;
+	max-width: 500px;
+	min-height: 300px;
+	text-align: center;
+	
+	
+}
+.h1_title{
+	font-size: 20px;
+}
+.p_info{
+	font-size: 15px;
+}
+/*------------컨텐트 헤더-----------*/
+td,tr,input,testarea,select,form{
+	font-size:15px;
+	border-radius: 5px;
+}
+table,form
+{
+	border:3px solid rgba(0, 134, 179,0.25);
+	border-spacing:15px;
 }
 
+/*--------------컨텐트---------------*/
+
+
+
+/*컨텐츠 영역*/
 
 /*height:0~790px footer relative속성*/
 @media screen and (max-height: 790px){
@@ -121,6 +135,17 @@ padding: 10px 20px;
 }
 /*width:0~768px일때만 햄버거 버튼이 나온다*/
 @media screen and (max-width: 768px){
+	.footer_alarm{
+
+	left: 10%
+	
+}
+
+	.footer_style {
+ 	 position:fixed;
+ 	font-size:12px;
+}
+
     .navbar{
         
         flex-direction: column;
