@@ -1,4 +1,4 @@
-package Homepage_module;
+package easy;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
