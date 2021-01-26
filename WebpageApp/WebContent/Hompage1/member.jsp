@@ -37,7 +37,7 @@
             </div>
 
             <ul class="navbar_menu">
-                <li><a href="">Introduce</a></li>
+                <li><a href="Introduce.jsp">Introduce</a></li>
                 <li><a href="">Board</a></li>
                 <li><a href="">Statistics</a></li>     
             </ul>
@@ -77,6 +77,31 @@
     							<input name='repwd' type="password" size="15">
     							</td>
     						</tr>
+    						 <tr>
+    							<td >이름</td>
+    							<td>
+    							<input name='name' type="text" size="20">
+    							</td>
+    					    </tr>
+    					    <tr>
+							 	<td>성별</td>
+									<td>
+										남<input type="radio" name="gender" value="1" checked> 
+										여<input type="radio" name="gender" value="2">
+									</td>
+							</tr>
+							<tr>
+								<td>생년월일</td>
+								<td><input name="birthday" size="6">
+									ex)830815</td>
+								
+							</tr>
+								<tr>
+									<td>Email</td>
+									<td><input name="email" size="30">
+								</td>
+							</tr>
+							
     						<tr>
     							<td>우편번호</td>
     							<td>
@@ -92,8 +117,13 @@
     							<td>상세주소</td>
     							<td><input name="detailaddress"  size="20" id="detailAddress" ></td>
     						</tr>
-    						<td colspan="3" align="center">
+    						
+							<tr>
+							<td colspan="3" align="center">
 								   <input type="button" value="회원가입" onclick="inputCheck()">
+							</td>
+							</tr>
+							
     				</FORM>
     			</table>
     		</center>

@@ -1,12 +1,12 @@
-package exam_module;
+package Homepage_module;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Vector;
 
-import Homepage_module.ZipcodeBean;
-import exam_module.MemberBean;
+
+import Homepage_module.MemberBean;
 
 public class MemberMgr {
 
@@ -51,15 +51,20 @@ public class MemberMgr {
 		boolean flag = false;
 		try {
 			con = pool.getConnection();
-			sql = "insert into boardmember(id,pwd,zipcode,address,detailaddress)"
-					+"values(?,?,?,?,?)";
+			sql = "insert boardmember(id,pwd,zipcode,address,detailaddress,name,gender"
+					+ ",birthday,email)values(?,?,?,?,?,?,?,?,?,?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bean.getId());
 			pstmt.setString(2, bean.getPwd());
 			pstmt.setString(3, bean.getZipcode());
 			pstmt.setString(4, bean.getAddress());
 			pstmt.setString(5, bean.getDetailaddress());
-		if (pstmt.executeUpdate() == 1)
+			pstmt.setString(6, bean.getName());
+			pstmt.setString(7, bean.getGender());
+			pstmt.setString(8, bean.getBirthday());
+			pstmt.setString(9, bean.getEmail());
+			
+			if (pstmt.executeUpdate() == 1)
 				flag = true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -78,7 +83,7 @@ public class MemberMgr {
 		boolean flag = false;
 		try {
 			con = pool.getConnection();
-			sql = "select id from tblMember where id = ? and pwd = ?";
+			sql = "select id from boardmember where id = ? and pwd = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			pstmt.setString(2, pwd);
@@ -104,7 +109,7 @@ public class MemberMgr {
 		MemberBean bean = null;
 		try {
 			con = pool.getConnection();
-			String sql = "select * from tblMember where id = ?";
+			String sql = "select * from boardmember where id = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
@@ -112,14 +117,13 @@ public class MemberMgr {
 				bean = new MemberBean();
 				bean.setId(rs.getString("id"));
 				bean.setPwd(rs.getString("pwd"));
-				
 				bean.setZipcode(rs.getString("zipcode"));
 				bean.setAddress(rs.getString("address"));
-				String hobbys[] = new String[5];
-				String hobby = rs.getString("hobby");// 01001
-				for (int i = 0; i < hobbys.length; i++) {
-					hobbys[i] = hobby.substring(i, i + 1);
-				}
+				bean.setDetailaddress(rs.getString("detailaddress"));
+				bean.setName(rs.getString("name"));
+				bean.setGender(rs.getString("gender"));
+				bean.setBirthday(rs.getString("birthday"));
+				bean.setEmail(rs.getString("email"));
 				
 			}
 		} catch (Exception e) {
@@ -137,29 +141,19 @@ public class MemberMgr {
 		boolean flag = false;
 		try {
 			con = pool.getConnection();
-			String sql = "update tblMember set pwd=?, name=?, gender=?, birthday=?,"
-					+ "email=?, zipcode=?, address=?, hobby=?, job=? where id = ?";
+			String sql = "update boardmember set pwd=?, zipcode=?, address=?, detailaddress=?,"
+					+ "name=?, gender=?, birthday=?, email=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bean.getPwd());
-			pstmt.setString(2, bean.getName());
-			pstmt.setString(3, bean.getGender());
-			pstmt.setString(4, bean.getBirthday());
-			pstmt.setString(5, bean.getEmail());
-			pstmt.setString(6, bean.getZipcode());
-			pstmt.setString(7, bean.getAddress());
-			char hobby[] = { '0', '0', '0', '0', '0' };
-			if (bean.getHobby() != null) {
-				String hobbys[] = bean.getHobby();
-				String list[] = { "인터넷", "여행", "게임", "영화", "운동" };
-				for (int i = 0; i < hobbys.length; i++) {
-					for (int j = 0; j < list.length; j++)
-						if (hobbys[i].equals(list[j]))
-							hobby[j] = '1';
-				}
-			}
-			pstmt.setString(8, new String(hobby));
+			pstmt.setString(2, bean.getZipcode());
+			pstmt.setString(3, bean.getAddress());
+			pstmt.setString(4, bean.getDetailaddress());
+			pstmt.setString(5, bean.getName());
+			pstmt.setString(6, bean.getGender());
+			pstmt.setString(7, bean.getBirthday());
+			pstmt.setString(8, bean.getEmail());
 			
-			pstmt.setString(10, bean.getId());
+		
 			int count = pstmt.executeUpdate();
 			if (count > 0)
 				flag = true;

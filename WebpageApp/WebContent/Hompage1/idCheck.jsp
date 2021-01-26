@@ -1,12 +1,11 @@
+<%@page import="Homepage_module.MemberBean"%>
 <%@ page  contentType="text/html; charset=UTF-8"%>
-
 <jsp:useBean id="mMgr" class="Homepage_module.MemberMgr"></jsp:useBean>
 <%
 	request.setCharacterEncoding("UTF-8");
 	String id=request.getParameter("id");
 	boolean result =mMgr.checkId(id);
-	
-%>
+	%>
 <!DOCTYPE html>
 <html>
 <head>

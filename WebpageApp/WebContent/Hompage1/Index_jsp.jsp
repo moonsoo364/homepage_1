@@ -16,11 +16,11 @@
     <nav class="navbar">
             <div class="navbar_title">
                 <i class="fas fa-chalkboard-teacher"></i>
-                <a href="#">Hello IT World!</a>
+                <a href="Index_jsp.jsp">Hello IT World!</a>
             </div>
 
             <ul class="navbar_menu">
-                <li><a href="">Introduce</a></li>
+                <li><a href="Introduce.jsp">Introduce</a></li>
                 <li><a href="">Board</a></li>
                 <li><a href="">Statistics</a></li>     
             </ul>

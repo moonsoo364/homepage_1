@@ -4,8 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Vector;
+
+import Homepage_module.ZipcodeBean;
 import ch14.MemberBean;
-import ch14.ZipcodeBean;
 
 public class MemberMgr {
 

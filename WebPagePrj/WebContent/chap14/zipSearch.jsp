@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@page import="ch14.ZipcodeBean"%>
+<%@page import="Homepage_module.ZipcodeBean"%>
 <%@page import="java.util.Vector"%>
 <jsp:useBean id="mMgr" class="ch14.MemberMgr" />
 <%
