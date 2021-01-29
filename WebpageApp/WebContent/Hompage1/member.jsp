@@ -7,33 +7,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
-    <link rel="stylesheet" href="style_member.css">
+    <link rel="stylesheet" href="css/style_member.css">
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" ></script>
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script src="main.js" defer></script>
-    <script src="AddressApi.js" ></script>
-    <script type="text/javascript" src="register.js"></script>
+    <script src="javascript/main.js" defer></script>
+    <script src="javascript/AddressApi.js" ></script>
+    <script type="text/javascript" src="javascript/register.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
     <!-- 아이디 중복확인 함수-->
-    <script type="text/javascript">
-    function idCheck(id) {
-		frm=document.register_form;
-		if(id==""){
-			alert("아이디를 입력해 주세요.");
-			frm.id.focus();
-			return;
-		}
-		url="idCheck.jsp?id=" +id;
-		window.open(url,"IDCheck","width=300, height=150");
-	}
-    </script>
     
 </head>
 <body>
     <nav class="navbar">
             <div class="navbar_title">
                 <i class="fas fa-chalkboard-teacher"></i>
-                <a href="Index_jsp.jsp">Hello IT World!</a>
+                <a href="Index.jsp">Hello IT World!</a>
             </div>
 
             <ul class="navbar_menu">
@@ -118,12 +106,18 @@
     							<td><input name="detailaddress"  size="20" id="detailAddress" ></td>
     						</tr>
     						
+							
+							<td>가입유형</td>
+								<td><select name=usertype>
+										<option value="0" selected>선택하세요.
+										<option value="관리자">관리자
+										<option value="유저">유저
+								</select></td>	
 							<tr>
 							<td colspan="3" align="center">
 								   <input type="button" value="회원가입" onclick="inputCheck()">
 							</td>
 							</tr>
-							
     				</FORM>
     			</table>
     		</center>
